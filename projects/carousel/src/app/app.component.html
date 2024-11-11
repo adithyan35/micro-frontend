@@ -1,0 +1,29 @@
+<app-navbar></app-navbar>
+<router-outlet></router-outlet>
+<section class="product">
+  <div class="container-fluid">
+    <div class="slider-wrap">
+      <!-- Slider container with dynamic slide display -->
+      <div class="slider-main" [ngStyle]="getSlideStyle()">
+        <div *ngFor="let slide of visibleSlides" class="item">
+          <div class="text">{{ slide }}</div>
+        </div>
+      </div>
+
+      <!-- Navigation buttons for prev/next -->
+      <div class="button-area">
+        <button type="button" class="prev" (click)="prevSlide()">Previous</button>
+        <button type="button" class="next" (click)="nextSlide()">Next</button>
+      </div>
+    </div>
+
+    <!-- Indicators, dynamically created based on the number of slide sets -->
+    <div id="indicators">
+      <div *ngFor="let _, let i = index of indicators" 
+           class="indicator" 
+           [ngClass]="{active: currentSlide / slidesPerPage === i}" 
+           (click)="jumpToIndicator(i)">
+      </div>
+    </div>
+  </div>
+</section>

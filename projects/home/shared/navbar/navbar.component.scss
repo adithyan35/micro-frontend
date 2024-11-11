@@ -1,0 +1,18 @@
+.navbar-nav{
+    display: flex;
+    align-items: center;
+    justify-content:center ;
+    flex-direction: row;
+}
+
+.side{
+color:#141313;
+    justify-self: space-around !important;
+}
+ul{
+    gap:30px;
+    align-items: end;
+}
+.nav-link{
+    cursor: pointer;
+}
